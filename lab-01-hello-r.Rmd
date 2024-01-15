@@ -313,6 +313,8 @@ Answer: The correlation coefficient between 'x' and 'y' for the dataset *star* i
 
 4.  Plot `y` vs. `x` for the `circle` dataset. You can (and should) reuse code we introduced above, just replace the dataset name with the desired dataset. Then, calculate the correlation coefficient between `x` and `y` for this dataset. How does this value compare to the `r` of `dino`?
 
+Answer: The correlation coefficient between 'x' and 'y' for the dataset *circle* is -0.06834336. In comparison to the dataset *dino*, the value of *circle* is smaller, measuring nearly 0.004 less.
+
 🧶 ✅ ⬆️ *You should pause again, commit changes with the commit message "Added answer for Ex 4", and push. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.*
 
 ```{marginfigure}
