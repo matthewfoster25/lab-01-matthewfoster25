@@ -1,12 +1,15 @@
 ---
 title: "Lab 01 - Hello R!"
 author: "Matthew Foster"
-output: 
+output:
+  pdf_document:
+    latex_engine: xelatex
   tufte::tufte_html:
-    css: ../lab.css
+    css: "../lab.css"
     tufte_variant: "envisioned"
-    highlight: pygments
 link-citations: true
+editor_options: 
+  chunk_output_type: console
 ---
 
 ```{marginfigure}
@@ -262,6 +265,7 @@ dino_data <- datasaurus_dozen %>%
   filter(dataset == "dino")
 ```
 
+
 There is a lot going on here, so let's slow down and unpack it a bit.
 
 First, the pipe operator: `%>%`, takes what comes before it and sends it as the first argument to what comes after it.
@@ -277,7 +281,7 @@ In other words, the columns of the data that get mapped to certain aesthetic fea
 Then, we add another layer to this plot where we define which `geom`etric shapes we want to use to represent each observation in the data.
 In this case we want these to be points, hence `geom_point`.
 
-```{r fig.fullwidth=TRUE}
+```{r fig.fullwidth=TRUE, fig.height=3, fig.width=6}
 ggplot(data = dino_data, mapping = aes(x = x, y = y)) +
   geom_point()
 ```
@@ -323,7 +327,8 @@ Facet by the dataset variable, placing the plots in a 3 column grid, and don't a
 
 5.  Finally, let's plot all datasets at once. In order to do this we will make use of faceting.
 
-```{r all-viz, eval=FALSE, fig.fullwidth=TRUE}
+
+```{r all-viz, eval=FALSE, fig.fullwidth=TRUE, fig.height=3, fig.width=6}
 ggplot(datasaurus_dozen, aes(x = x, y = y, color = dataset))+
   geom_point()+
   facet_wrap(~ dataset, ncol = 3) +
